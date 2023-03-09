@@ -85,8 +85,30 @@ module.exports={
                 },
                 test: /\.jsx?$/,
                 exclude: /(node_modules|bower_components)/
+            },
+            {
+              test: /\.scss$/,
+              use: [
+                'style-loader',
+                'css-loader',
+                {
+                  loader: 'sass-loader',
+                  options: {
+                    sassOptions: {
+                      includePaths: [
+                        path.resolve(__dirname, './node_modules/foundation-sites/scss')
+                      ]
+                    }
+                  }
+                }
+              ]
             }
         ]
+    },
+    sassLoader:{
+      includePaths:[
+        path.resolve(__dirname, './node_modules/foundation-sites/scss')
+      ]
     },
     devtool: 'eval-source-map'
     // devtool: 'cheap-module-eval-source-map'

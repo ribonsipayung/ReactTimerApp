@@ -6,7 +6,6 @@ var Countdown = require('./components/Countdown');
 var Timer = require('./components/Timer');
 
 // Load foundation
-require('style-loader!css-loader!foundation-sites/dist/foundation.min.css')
 $(document).foundation();
 
 //App css
