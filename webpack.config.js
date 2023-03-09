@@ -49,7 +49,8 @@ module.exports={
             applicationStyles: path.resolve(__dirname, 'app/styles/app.scss'),
             Navigation: path.resolve(__dirname, 'app/components/Navigation.jsx'),
             Countdown: path.resolve(__dirname, 'app/components/Countdown.jsx'),
-            Timer: path.resolve(__dirname, 'app/components/Timer.jsx')
+            Timer: path.resolve(__dirname, 'app/components/Timer.jsx'),
+            Clock: path.resolve(__dirname, 'app/components/Clock.jsx')
         },
         modules: [
           path.resolve(__dirname, 'node_modules')
