@@ -12,7 +12,10 @@ module.exports={
         jquery: 'jQuery'
       },
       plugins: [
-        new webpack.ProvidePlugin({
+         new webpack.ProvidePlugin({
+        // new webpack.DefinePlugin({
+        //   'process.env.NODE_ENV': JSON.stringify('production'),
+        //   process: {},
           '$': 'jquery',
           'jQuery': 'jquery'
         })
@@ -44,6 +47,10 @@ module.exports={
     //     },
 
     resolve: {
+      fallback: {
+        util: require.resolve("util/"),
+        "path": require.resolve("path-browserify")
+      },
         alias: {
             Main: path.resolve(__dirname, 'app/components/Main.jsx'),
             applicationStyles: path.resolve(__dirname, 'app/styles/app.scss'),
@@ -52,6 +59,7 @@ module.exports={
             Timer: path.resolve(__dirname, 'app/components/Timer.jsx'),
             Clock: path.resolve(__dirname, 'app/components/Clock.jsx'),
             CountdownForm: path.resolve(__dirname, 'app/components/CountdownForm.jsx'),
+            Controls: path.resolve(__dirname, 'app/components/Controls.jsx')
         },
         modules: [
           path.resolve(__dirname, 'node_modules')
@@ -82,7 +90,7 @@ module.exports={
     },
     devtool: 'eval-source-map'
     // devtool: 'cheap-module-eval-source-map'
-};
+  };
 
 
 
